@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> Q1 3rd Graded Exercise submitted by Nathan Allen Libo-on of 9Lithium </h2>
+
+    <p> Guess the number : ****</p>
+    <p> The number is from 1 to 100</p>
+    <label> Enter your guess:
+        <input id="guessNumber" type="number" min="1" max="100"/>
+    </label> </br>
+
+</br>
+
+    <button onclick="checkIt()"> Check It </button>
+    <p> Result: <span id="result"></span> </p>
+
+    <script>
+        let dNumber = Math.floor(Math.random() * 100) + 1;
+
+        function checkIt() {
+            let guessNumber = parseInt(document.getElementById("guessNumber").value);
+
+            if (guessNumber < 1 || guessNumber > 100) {
+                resultText = "Please enter a number between 1 and 100.";
+            } else if (guessNumber < dNumber) {
+                resultText = "Higher";
+            } else if (guessNumber > dNumber) {
+                resultText = "Lower";
+            } else {
+                resultText = "You are correct!";
+            }
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
